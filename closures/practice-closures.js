@@ -9,7 +9,12 @@
   */
   
   //CODE HERE
-
+  function myFunc() {
+    let myStr = 'super secret string'
+    function getSecretString() {
+      return myStr
+    }
+  }
   
   //Now create a variable called secretString. Its value should be the invocation of myFunc.
 
