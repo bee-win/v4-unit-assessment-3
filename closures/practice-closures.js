@@ -14,11 +14,13 @@
     function getSecretString() {
       return myStr
     }
+    return getSecretString
   }
   
   //Now create a variable called secretString. Its value should be the invocation of myFunc.
 
   //CODE HERE
+  let secretString = myFunc()
   
   
   ////////////PROBLEM 2////////////
@@ -34,26 +36,45 @@
   */
   
   //CODE HERE
+  function lightSwitch() {
+    let isTheLightOn = false
+    function flipTheSwitch() {
+      if(isTheLightOn = false) {
+        isTheLightOn = true
+        return 'The light is on'
+      }
+      else {
+        isTheLightOn = false
+        return 'The light is off'
+      }
+    }
+    return flipTheSwitch
+  };
+
+
 
   
   //Create a variable called kitchenSwitch whose value is the invocation of lightSwitch.
   
   //CODE HERE
-
+  let kitchenSwitch = lightSwitch();
   
   //Invoke kitchenSwitch.
 
   //CODE HERE
-  
+  kitchenSwitch();
   
   //Create a variable called bathroomSwitch whose value is the invocation of lightSwitch. 
 
   //CODE HERE
+  let bathroomSwitch = lightSwitch();
   
   
   //Invoke bathroomSwitch twice.
   
   //CODE HERE
+  bathroomSwitch();
+  bathroomSwitch();
 
   
   
@@ -69,6 +90,27 @@
   */
 
   //CODE HERE
+  function plantTracker() {
+    let plant = 'fern';
+    let height = 12;
+    
+    return {
+      readInfo() {
+        return `This is a ${plant} that is ${height} inches tall.`
+      },
+
+      waterPlant(){
+          this.height += 1
+          return height
+      },
+
+      prunePlant() {
+          height -= 1
+          return height
+      }
+
+    }
+  }
 
 
   ////////////PROBLEM 4////////////
@@ -84,6 +126,27 @@
   */
 
   //CODE HERE
+  function inventory() {
+    let products = [];
+
+    return {
+      readProducts() {
+        return products
+      },
+
+      addToProducts(str) {
+        products.push(str)
+      },
+
+      deleteFromProducts(str) {
+        let index = products.indexOf(str)
+        products.splice(index, 1)
+      }
+    }
+
+
+  }
+
 
 
   /*
@@ -91,6 +154,7 @@
   */
 
   //CODE HERE
+  let shoes = inventory()
 
 
   /*
@@ -98,4 +162,4 @@
   */
 
   //CODE HERE
-
+  shoes.addToProducts('nikes')
